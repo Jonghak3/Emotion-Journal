@@ -5,7 +5,11 @@ import New from './pages/New';
 import Diary from './pages/Diary';
 import Notfound from './pages/Notfound';
 import Edit from './pages/Edit';
-import { createContext, useEffect, useReducer, useRef, useState } from 'react';
+import { useEffect, useReducer, useRef, useState } from 'react';
+import {
+  DiaryDispatchContext,
+  DiaryStateContext,
+} from './context/DiaryContext';
 
 function reducer(state, action) {
   let nextState;
@@ -34,8 +38,6 @@ function reducer(state, action) {
   localStorage.setItem('diary', JSON.stringify(nextState));
   return nextState;
 }
-export const DiaryStateContext = createContext();
-export const DiaryDispatchContext = createContext();
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

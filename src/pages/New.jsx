@@ -3,7 +3,7 @@ import Editor from '../components/Editor';
 import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
-import { DiaryDispatchContext } from '../App';
+import { DiaryDispatchContext } from '../context/DiaryContext';
 import usePageTitle from '../hooks/usePageTitle';
 
 const New = () => {

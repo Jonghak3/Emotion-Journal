@@ -3,7 +3,10 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import Editor from '../components/Editor';
 import { useContext, useEffect, useState } from 'react';
-import { DiaryDispatchContext, DiaryStateContext } from '../App';
+import {
+  DiaryDispatchContext,
+  DiaryStateContext,
+} from '../context/DiaryContext';
 import useDiary from '../hooks/useDiary';
 import usePageTitle from '../hooks/usePageTitle';
 
