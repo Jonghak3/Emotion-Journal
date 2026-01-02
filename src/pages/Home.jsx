@@ -1,9 +1,9 @@
-import Button from '../components/Button';
-import Header from '../components/Header';
-import DiaryList from '../components/DiaryList';
-import { useContext, useState } from 'react';
-import { DiaryStateContext } from '../App';
-import usePageTitle from '../hooks/usePageTitle';
+import Button from "../components/Button";
+import Header from "../components/Header";
+import DiaryList from "../components/DiaryList";
+import { useContext, useState } from "react";
+import { DiaryStateContext } from "../context/DiaryContext";
+import usePageTitle from "../hooks/usePageTitle";
 
 const getMonthlyDate = (pivotDate, data) => {
   const beginTime = new Date(
@@ -31,7 +31,7 @@ const getMonthlyDate = (pivotDate, data) => {
 const Home = () => {
   const data = useContext(DiaryStateContext);
   const [pivotDate, setPivotDate] = useState(new Date());
-  usePageTitle('감정 일기장');
+  usePageTitle("감정 일기장");
 
   const montlyData = getMonthlyDate(pivotDate, data);
 
@@ -45,8 +45,8 @@ const Home = () => {
     <div>
       <Header
         title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`}
-        leftChild={<Button onClick={onDecreaseMonth} text={'<'}></Button>}
-        rightChild={<Button onClick={onIncreaseMonth} on text={'>'}></Button>}
+        leftChild={<Button onClick={onDecreaseMonth} text={"<"}></Button>}
+        rightChild={<Button onClick={onIncreaseMonth} on text={">"}></Button>}
       ></Header>
       <DiaryList data={montlyData}></DiaryList>
     </div>
